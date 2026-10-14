@@ -1,8 +1,8 @@
-# Proyek Analisis Data — E-Commerce Public Dataset (Olist)
+# Proyek Analisis Data: E-Commerce Public Dataset (Olist)
 
-Proyek akhir untuk Submission **Dicoding Academy 555 — Belajar Fundamental Analisis Data**.
+Proyek akhir untuk Submission **Belajar Fundamental Analisis Data (Dicoding Academy 555)**.
 Analisis menyeluruh atas **109.880 baris transaksi** e-commerce Brazil periode
-**September 2016 – Agustus 2018**, dari proses data wrangling sampai dashboard
+**September 2016 - Agustus 2018**, dari proses data wrangling sampai dashboard
 interaktif yang dapat difilter.
 
 Dibuat oleh **Rafid Al Khairy**.
@@ -35,7 +35,7 @@ filter tanggal, negara bagian, kategori produk, dan metode pembayaran.
 
 ## Dataset
 
-**E-Commerce Public Dataset (Olist)** — dataset transaksi marketplace Brasil,
+**E-Commerce Public Dataset (Olist)**, dataset transaksi marketplace Brasil,
 terbit 2018, mencakup 9 tabel CSV:
 
 | Tabel | Isi |
@@ -85,7 +85,7 @@ Proyek-Analisis-Data/
 
 ## Cara Menjalankan
 
-**Prasyarat:** Python 3.9–3.12.
+**Prasyarat:** Python 3.9-3.12.
 
 ```bash
 # 1. Buat virtual environment
@@ -123,12 +123,12 @@ Dashboard di-deploy ke **Streamlit Community Cloud** (gratis).
   nilai pesanan (AOV) **R$ 137,00**.
 - Pendapatan tumbuh **~7,5× pada 2017**, memuncak di **November 2017**
   (**R$ 987.765,37**, 7.289 pesanan) bertepatan dengan musim promo akhir tahun,
-  lalu **melandai dan stabil** di kisaran R$ 826.437 – 977.545 per bulan sepanjang 2018.
+  lalu **melandai dan stabil** di kisaran R$ 826.437 - 977.545 per bulan sepanjang 2018.
 
 **Kategori produk**
 - 5 kategori teratas menyumbang **40,41%** pendapatan, didominasi
   `health_beauty`, `watches_gifts`, dan `bed_bath_table`.
-- 5 kategori terbawah hanya **0,026%** — kandidat untuk dievaluasi ulang.
+- 5 kategori terbawah hanya **0,026%**, kandidat untuk dievaluasi ulang.
 
 **Geografis**
 - **São Paulo (SP)** menyumbang **38,36%** pendapatan; 5 negara bagian teratas
@@ -138,15 +138,15 @@ Dashboard di-deploy ke **Streamlit Community Cloud** (gratis).
 
 **Layanan pengiriman**
 - **delivery_days** memiliki korelasi negatif terkuat terhadap skor review
-  (**r = −0,305**), disusul `delay_days` (r = −0,233). Harga praktis tidak
+  (**r = -0,305**), disusul `delay_days` (r = -0,233). Harga praktis tidak
   berpengaruh (r = 0,003).
 - Pesanan terlambat (**6,79%**) mendapat skor **2,26**, sedangkan pesanan tepat
-  waktu mendapat **4,21** — selisih **1,95 poin**. Karena keterlambatan hanya
+  waktu mendapat **4,21**, selisih **1,95 poin**. Karena keterlambatan hanya
   terjadi pada sebagian kecil pesanan, perbaikan di titik ini memberi dampak besar
   dengan biaya yang terbatas.
 
 **Segmentasi RFM**
-- **97% pelanggan hanya bertransaksi sekali** — ini masalah retensi terbesar.
+- **97% pelanggan hanya bertransaksi sekali**, ini masalah retensi terbesar.
 - Namun pelanggan yang *repeat* rata-rata membelanjakan hampir **2× lebih besar**.
 - Segmen **`Hibernating (High Value)`** (nilai tinggi, sudah lama tidak aktif) adalah
   target utama kampanye *win-back*, sementara **`Champions`** perlu program loyalitas.
@@ -154,17 +154,17 @@ Dashboard di-deploy ke **Streamlit Community Cloud** (gratis).
 ## Metodologi
 
 **Data Wrangling**
-- *Gathering* — 9 dataset Olist, digabung dengan `merge` berjenjang.
-- *Assessing* — audit kualitas data: missing value, duplikasi, dan nilai anomali
+- *Gathering*: 9 dataset Olist, digabung dengan `merge` berjenjang.
+- *Assessing*: audit kualitas data: missing value, duplikasi, dan nilai anomali
   pada setiap kolom.
-- *Cleaning* —
+- *Cleaning*:
   - Agregasi `order_payments` menjadi **satu baris per order** (99.440 baris) untuk
     mencegah *over-count* akibat pembayaran cicilan.
   - Deduplikasi `order_reviews`: buang duplikat `review_id`, lalu pertahankan
-    **review terbaru per `order_id`** → 99.224 review bersih dengan skor diskret 1–5.
+    **review terbaru per `order_id`** → 99.224 review bersih dengan skor diskret 1-5.
   - Terjemahkan nama kategori dari Portugis ke Inggris.
   - Penghapusan duplikat dan baris tidak valid.
-  - Nilai *outlier* harga dan ongkos kirim **tidak dihapus** — nilainya valid dan
+  - Nilai *outlier* harga dan ongkos kirim **tidak dihapus**, nilainya valid dan
     justru menjadi temuan penting (contoh: ongkos kirim ke wilayah terpencil).
 
 **Analisis**
@@ -181,7 +181,7 @@ Dashboard di-deploy ke **Streamlit Community Cloud** (gratis).
 Tiga rekomendasi utama:
 
 1. **Kurangi ketergantungan pada São Paulo** dengan membangun pusat distribusi
-   di wilayah Selatan dan Timur Laut — 73,94% pendapatan terkonsentrasi di 5
+   di wilayah Selatan dan Timur Laut, 73,94% pendapatan terkonsentrasi di 5
    negara bagian, namun wilayah yang dilayani saat ini lambat dan mahal.
 2. **Prioritaskan keunggulan operasional pada 5 kategori teratas** yang menyumbang
    40,41% pendapatan, sekaligus tinjau ulang 5 kategori terbawah yang nyaris
@@ -194,4 +194,4 @@ Tiga rekomendasi utama:
 
 **Dibuat oleh:** Rafid Al Khairy
 **Sumber data:** E-Commerce Public Dataset (Olist)
-**Kursus:** Dicoding Academy 555 — Belajar Fundamental Analisis Data
+**Kursus:** Belajar Fundamental Analisis Data (Dicoding Academy 555)

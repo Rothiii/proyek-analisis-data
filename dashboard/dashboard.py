@@ -1,4 +1,4 @@
-"""Dashboard E-Commerce Public Dataset (Olist) — Proyek Analisis Data Dicoding.
+"""Dashboard E-Commerce Public Dataset (Olist), Proyek Analisis Data Dicoding.
 
 Menjawab 3 pertanyaan bisnis:
   1. Kategori produk dengan revenue tertinggi & terendah
@@ -27,7 +27,7 @@ st.set_page_config(
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-# Palet colorblind-safe (Okabe-Ito) — konsisten dengan notebook
+# Palet colorblind-safe (Okabe-Ito), konsisten dengan notebook
 PALETTE = ["#0072B2", "#D55E00", "#009E73", "#CC79A7",
            "#E69F00", "#56B4E9", "#F0E442", "#000000"]
 
@@ -120,7 +120,7 @@ filtered = filtered[_cat_mask]
 st.title("🛒 Dashboard Analisis E-Commerce Olist (Brazil)")
 st.markdown(
     "Analisis data transaksi **E-Commerce Public Dataset (Olist)** untuk periode "
-    "**September 2016 – Agustus 2018**. Dashboard ini menjawab tiga pertanyaan bisnis "
+    "**September 2016 - Agustus 2018**. Dashboard ini menjawab tiga pertanyaan bisnis "
     "kategori produk, tren penjualan bulanan, dan sebaran geografis pelanggan "
     "serta dilengkapi segmentasi pelanggan berbasis **RFM**."
 )
@@ -144,7 +144,7 @@ k1.metric("Total Pendapatan", f"R$ {total_revenue:,.0f}".replace(",", "."))
 k2.metric("Jumlah Pesanan", f"{total_orders:,}".replace(",", "."))
 k3.metric("Pelanggan Unik", f"{total_customers:,}".replace(",", "."))
 k4.metric("Rata-rata Nilai Pesanan", f"R$ {aov:,.2f}".replace(",", "X").replace(".", ",").replace("X", "."))
-k5.metric("Rata-rata Skor Review", f"{avg_review:.2f} / 5" if pd.notna(avg_review) else "—")
+k5.metric("Rata-rata Skor Review", f"{avg_review:.2f} / 5" if pd.notna(avg_review) else "-")
 
 st.caption(
     f"Rata-rata waktu pengiriman **{avg_delivery:.1f} hari** · "
@@ -154,10 +154,10 @@ st.divider()
 
 # ─────────────────────────── TABS ───────────────────────────
 tab1, tab2, tab3, tab4 = st.tabs([
-    "📈 Pertanyaan 1 — Tren Bulanan",
-    "🏷️ Pertanyaan 2 — Kategori Produk",
-    "🗺️ Pertanyaan 3 — Sebaran Geografis",
-    "🧩 Analisis Lanjutan — RFM",
+    "📈 Pertanyaan 1: Tren Bulanan",
+    "🏷️ Pertanyaan 2: Kategori Produk",
+    "🗺️ Pertanyaan 3: Sebaran Geografis",
+    "🧩 Analisis Lanjutan: RFM",
 ])
 
 # ═══════════════ TAB 1: TREN BULANAN ═══════════════
@@ -392,8 +392,8 @@ with tab4:
     fig8 = px.scatter(
         rfm_df, x="recency", y="monetary", color="segment",
         title="Peta Pelanggan: Recency vs Monetary per Segmen",
-        labels={"recency": "Recency — hari sejak pembelian terakhir",
-                "monetary": "Monetary — total belanja (R$)"},
+        labels={"recency": "Recency: hari sejak pembelian terakhir",
+                "monetary": "Monetary: total belanja (R$)"},
         color_discrete_sequence=PALETTE, opacity=0.4,
     )
     fig8.update_yaxes(type="log")
@@ -412,7 +412,7 @@ with tab4:
     )
 
     st.info(
-        "**Insight:** **97%** pelanggan hanya bertransaksi **satu kali** — masalah retensi "
+        "**Insight:** **97%** pelanggan hanya bertransaksi **satu kali**, masalah retensi "
         "terbesar platform. Namun pelanggan *repeat* rata-rata membelanjakan hampir "
         "**2× lebih besar**. Segmen **`Hibernating (High Value)`** (pelanggan bernilai "
         "tinggi namun sudah ~1 tahun tidak aktif) adalah target utama kampanye *win-back*, "
@@ -422,5 +422,5 @@ with tab4:
 st.divider()
 st.caption(
     "Dibuat oleh **Rafid Al Khairy** · Dataset: E-Commerce Public Dataset (Olist) · "
-    "Submission Proyek Analisis Data — Dicoding Academy"
+    "Submission Proyek Analisis Data, Dicoding Academy"
 )
