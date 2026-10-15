@@ -20,7 +20,6 @@ import streamlit as st
 # ─────────────────────────── KONFIGURASI HALAMAN ───────────────────────────
 st.set_page_config(
     page_title="Dashboard E-Commerce Olist",
-    page_icon="🛒",
     layout="wide",
     initial_sidebar_state="expanded",
 )
@@ -58,7 +57,7 @@ def load_data():
 main_df, rfm_df = load_data()
 
 # ─────────────────────────── SIDEBAR FILTER ───────────────────────────
-st.sidebar.header("🔎 Filter Data")
+st.sidebar.header("Filter Data")
 
 d_min = main_df["order_date"].min()
 d_max = main_df["order_date"].max()
@@ -117,7 +116,7 @@ if set(sel_cats) == set(all_cats):
 filtered = filtered[_cat_mask]
 
 # ─────────────────────────── HEADER ───────────────────────────
-st.title("🛒 Dashboard Analisis E-Commerce Olist (Brazil)")
+st.title("Dashboard Analisis E-Commerce Olist (Brazil)")
 st.markdown(
     "Analisis data transaksi **E-Commerce Public Dataset (Olist)** untuk periode "
     "**September 2016 - Agustus 2018**. Dashboard ini menjawab tiga pertanyaan bisnis "
@@ -154,10 +153,10 @@ st.divider()
 
 # ─────────────────────────── TABS ───────────────────────────
 tab1, tab2, tab3, tab4 = st.tabs([
-    "📈 Pertanyaan 1: Tren Bulanan",
-    "🏷️ Pertanyaan 2: Kategori Produk",
-    "🗺️ Pertanyaan 3: Sebaran Geografis",
-    "🧩 Analisis Lanjutan: RFM",
+    "Pertanyaan 1: Tren Bulanan",
+    "Pertanyaan 2: Kategori Produk",
+    "Pertanyaan 3: Sebaran Geografis",
+    "Analisis Lanjutan: RFM",
 ])
 
 # ═══════════════ TAB 1: TREN BULANAN ═══════════════
